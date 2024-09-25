@@ -1,0 +1,95 @@
+<section class="SeccionCita">
+    <div class="ContenedorCita">
+    <div class="container">
+        <h2 class="tituloCita">Cita</h2>
+        <form class="formularioCita" (submit)="createCita()">
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="newCita.NombreCompleto">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" [(ngModel)]="newCita.Telefono">
+            </div>
+            <div class="form-group">
+                <label for="especialidad">Especialidad:</label>
+                <select id="especialidad" name="especialidad" [(ngModel)]="newCita.Especialidad">>
+                    <option value="" disabled selected>Selecciona una especialidad</option>
+                    <option value="blanqueamiento_brackets">Blanqueamiento y Brackets</option>
+                    <option value="endodoncia">Endodoncia</option>
+                    <option value="implantes_periodoncia">Implantes y Periodoncia</option>
+                    <option value="implantologia_regeneracion">Implantología y Regeneración ósea</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" [(ngModel)]="newCita.Fecha">
+            </div>
+            <div class="form-group">
+                <label for="hora">Hora:</label>
+                <select id="hora" name="hora" [(ngModel)]="newCita.Hora">
+                    <option value="" disabled selected>Selecciona una hora</option>
+                    <option value="10:00am - 11:00 am">10:00am - 11:00 am</option>
+                    <option value="11:00am - 12:00pm">11:00am - 12:00pm</option>
+                    <option value="12:00pm - 1:00pm">12:00pm - 1:00pm</option>
+                    <option value="1:00pm - 2:00pm">1:00pm - 2:00pm</option>
+                    <option value="4:00am - 5:00pm">4:00am - 5:00pm</option>
+                    <option value="5:00pm - 6:00pm">5:00pm - 6:00pm</option>
+                    <option value="7:00pm - 8:00pm">7:00pm - 8:00pm</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" rows="4" [(ngModel)]="newCita.Comentarios"></textarea>
+            </div>
+            <div *ngIf="showMessage" class="message">
+                {{ messageText }}
+              </div><!-- Aquí se agrega el div -->
+            <button type="submit">Agendar cita</button>
+            <div id="mensaje" style="background-color: #f5f5f5; color: #333; font-family: Arial, sans-serif; font-size: 14px; padding: 10px;">
+            </div>
+        </form>
+    </div>
+    </div>
+</section>
+<section>
+    <!-- haz-tu-cita.component.html -->
+
+<!-- ... (código existente) -->
+
+<div *ngIf=" isAdmin" class="container-fluid">
+    <h3>Lista de Citas</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre Completo</th>
+            <th>Telefono</th>
+            <th>Especialidad</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Comentarios</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cita of todasCitas">
+            <td>{{ cita._id }}</td>
+            <td>{{ cita.NombreCompleto }}</td>
+            <td>{{ cita.Telefono }}</td>
+            <td>{{ cita.Especialidad }}</td>
+            <td>{{ cita.Fecha }}</td>
+            <td>{{ cita.Hora }}</td>
+            <td>{{ cita.Comentarios }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteCita(cita._id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</section>
+

@@ -1,0 +1,49 @@
+
+.tituloLabor{
+    padding-top: 40px;
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+}
+#diseñoTitulo{
+    padding-top: 40px;
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(21,121,120);
+    text-transform: uppercase;
+}
+.Labor{
+    display: flex;
+    align-items: center;
+    background-color: #091126;
+    flex-wrap: wrap;
+}
+.contenedor1Nosotros{
+    flex:1 1 20rem;
+    padding: 2rem;
+}
+#imagenPaciente{
+    width: 100%;
+}
+.contenedor2Nosotros{
+    flex: 1 1 20rem;
+    padding: 2rem;
+}
+#tituloParrafoLabor{
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+#parrafoLabor{
+    text-align: justify;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.5;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}

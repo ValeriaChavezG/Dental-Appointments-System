@@ -1,0 +1,100 @@
+/* Presentacion Galeria */
+.tituloGaleria{
+    text-align: center;
+    margin: 20px 0 15px 0;
+    font-weight: 300;
+    color: rgb(0, 22, 63);
+    font-family: 'Courier New', Courier, monospace;
+}
+.tituloGaleria2{
+    text-align: center;
+    margin: 20px 0 15px 0;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+}
+.parrafoGaleria{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align:justify;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    line-height : 25px;
+    padding-bottom: 50px;
+}
+.linea{
+    border-top: 5px solid #ffffff;
+    padding-bottom: 50px;
+}
+.contenedorImagenesGaleria{
+    display: flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 3px;
+}
+.fondoColor{
+    background-color: rgb(255, 255, 255);
+}
+.imagenGaleria{
+    width: 32%;
+    position: relative;
+    height: 250px;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 3px 0px black;
+}
+#img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.letraimagen{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background: #76cbff;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease;
+}
+#letraOverlay{
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    top:50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.imagenGaleria:hover .letraimagen{
+    height: 100%;
+    cursor: pointer;
+}
+@media screen and (max-width:1000px)
+{
+    .contenedorImagenesGaleria{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:700px)
+{
+    .contenedorImagenesGaleria{
+        width: 90%;
+    }
+    .contenedorImagenesGaleria .imagenGaleria{
+        width: 48%;
+    }
+}
+@media screen and (max-width:450px)
+{
+    .contenedorImagenesGaleria{
+        width: 98%;
+    }
+    .contenedorImagenesGaleria .imagenGaleria{
+        width: 80%;
+    }
+}

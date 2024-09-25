@@ -1,0 +1,284 @@
+/* inicio.component.css */
+
+.inicio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+    background-color: #030C29;
+    margin-bottom: 0;
+  }
+  
+  .logo-container img {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .contenido-container {
+    flex: 1;
+    text-align: left;
+    color: #ffffff;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .reservar-btn {
+    background-color: #ffffff;
+    color: #17425f;
+    padding: 8px 15px;
+    font-size: 1.2em;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+/* Seccion de pasos */
+/* .pasos{
+    background-color: #F2F2F2;
+} */
+/* .ColorSeccion{
+    background-color: #A4ABBF;
+} */
+.letraPequeñaPasos{
+    /* padding: 520px; */
+    padding-top: 100px;
+    font-size: 15px;
+    text-align: center;
+    text-align: center;
+    color:royalblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+.tituloPasos{
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    color:rgb(14, 21, 44);
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -4px;
+    font-weight: 600;
+}
+.contenedorImagenesPasos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 150px;
+}
+.paso{
+   width: 250px;
+   padding-bottom: 20px;
+   text-align: center; 
+   /* box-shadow: 0 5px 5px rgba(0, 0, 0, .3); */
+   background:white;
+   margin: 20px 20px;
+   border-radius: 0 0 20% 20%;
+}
+#paso1{
+    border-radius: 100% 0 40% 0;
+}
+#paso2{
+    border-radius: 30% 0 0 0;
+}
+#paso3{
+    border-radius: 40%;
+}
+#paso4{
+    border-radius: 30% 0 0 0;
+}
+#imagenPaso{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 0 0 40% 40%;
+}
+#paso1:hover{
+    background-color: rgb(255, 206, 161);
+}
+#paso2:hover{
+    background-color: rgb(255, 254, 197);
+}
+#paso3:hover{
+    background-color: rgb(214, 255, 255);
+}
+#paso4:hover{
+    background-color: rgb(255, 238, 213);
+}
+.tituloPaso{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align:center;
+}
+.parrafoPaso{
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    text-align:center;
+    line-height : 25px;
+}
+/* Seccion de nosotros   */
+.doctor{
+    display: inline-block;
+}
+.nosotros{
+    background-color: #A4ABBF;
+    /* background: rgb(21,121,120);
+    background: linear-gradient(90deg, rgba(21,121,120,0.927608543417367) 16%, rgba(26,146,156,1) 50%, rgba(0,255,231,0.6166841736694677) 92%); */
+    /* background-color:cadetblue; */
+    
+}
+.tituloNosotros{
+    padding-top: 70px;
+    padding-bottom: 30px;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 2px;
+    color:white;
+    font-weight: 500;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#parrafoNosotros{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    line-height: 25px;
+    color: white;
+    text-align: justify;
+}
+.contenedorImagenesDoctores{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.doctor{
+    width:230px;
+    padding-top: 30px;
+    justify-content: space-between;
+    text-align: center;
+}
+#imagenDoctor{
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 70%;
+    border: 7px solid white;
+}
+.contenedorBotonNosotros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+}
+.contenedorBotonNosotros2{
+    text-decoration:none;
+    margin: 30px;
+    color: white;
+    font-weight:900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: transparent;
+    transition: all 0.6s;
+    padding: 10px 10px;
+    border: 1px solid white;
+    
+}
+#letrabotonNosotros{
+    text-align: center;
+    color:black;
+    font-weight:900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.contenedorBotonNosotros2:hover{
+    background-color: rgb(39, 212, 243);
+    box-shadow: 0 0 10px #189dbe, 0 0 40px #189dbe, 0 0 80px #189dbe;
+}
+/* Tratamientos */
+.tituloTratamientos{
+    padding: 20px;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 2px;
+    color:#189dbe;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Div1 */
+.tratamientos1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.t1{
+   width: 250px;
+   padding-bottom: 20px;
+   text-align: center; 
+   box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+   background: #90a5d8;
+   margin: 20px 20px;
+   border-radius: 0 0 20% 20%;
+}
+#imagent1{
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 0 0 40% 40%;
+}
+/* Div2 */
+.tratamientos2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 70px;
+}
+.t2{
+    width: 250px;
+    padding-bottom: 20px;
+    text-align: center; 
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    background: #90a5d8;
+    margin: 20px 20px;
+    border-radius: 0 0 20% 20%;
+ }
+#imagent2{
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 0 0 40% 40%;
+}
+.parrafosTratamientos{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    color: black;
+    text-align:justify;
+}
+.tituloTratamientos1{
+    letter-spacing: 1px;
+}
+.botonTratamientos{
+    text-decoration:none;
+    color: white;
+    font-weight:900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background:#6ec3d8;
+    transition: all 0.6s;
+    padding: 10px 10px;
+    border: 1px solid white;
+}
+#letrabotonTratamientos{
+    text-align: center;
+    color:black;
+    font-weight:900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.botonTratamientos:hover{
+    background-color: rgb(39, 212, 243);
+    box-shadow: 0 0 10px #189dbe, 0 0 10px #189dbe, 0 0 10px #189dbe;
+}

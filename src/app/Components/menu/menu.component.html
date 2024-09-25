@@ -1,0 +1,19 @@
+<div class="navbar">
+    <!-- <img src="https://w7.pngwing.com/pngs/435/647/png-transparent-mouthwash-toothbrush-toothpaste-pepsodent-tooth-germ-gums-toothpaste-oral-hygiene.png" alt="LogoClinica" class="logo"> -->
+    <div class="nav-items">
+      <div class="nav-item"><a routerLink="/Inicio">Inicio</a></div>
+      <div class="nav-item"><a routerLink="/SobreNosotros">Sobre Nosotros</a></div>
+      <div class="nav-item"><a routerLink="/Tratamientos">Tratamientos</a></div>
+      <div class="nav-item"><a routerLink="/Galeria">Galería</a></div>
+      <div class="nav-item"><a routerLink="/HazTuCita">Haz tu Cita</a></div>
+
+      <ng-container *ngIf="!authService.isLogged()">
+        <div class="nav-item" id="mover"><a routerLink="/login">Inicia Sesión</a></div>
+        <div  class="nav-item" ><a routerLink="/Registrate">Regístrate</a></div>
+        
+      </ng-container>
+      
+      <div *ngIf="authService.isLogged()"  id="mover"class="nav-item" (click)="authService.logout()">
+        <a routerLink="/login">Cerrar Sesión</a></div>
+    </div>
+  </div>
