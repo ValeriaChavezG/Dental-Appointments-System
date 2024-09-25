@@ -1,0 +1,61 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Give You Glory', cursive;
+    list-style: none;
+    text-decoration: none;
+    
+}
+.Modulo{
+   margin: 40px;
+   font-size: 30px;
+   cursor: pointer;
+}
+.Menu{
+    cursor: pointer;
+    cursor: pointer;
+    padding-top: 50px;
+    align-items:center;
+    width: 100vw;
+    height: 10vh;
+    color: white;
+
+    background-color:rgb(0, 0, 0);
+}
+.active{
+    color:red !important;
+    font-weight: bolder;
+}
+
+.ContenedorMenu{
+
+    width: 100vw;
+    height: 20vh;
+}
+.logoG{
+    display: flex;
+}
+#imagenPaso{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 0 0 40% 40%;
+}
+.logo{
+    font-size: 40px;
+    font-weight: 900;
+    cursor: pointer;
+    color: rgba(52, 92, 124, 0.979);
+}
+header{
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    padding-top: 100px;
+    height: 100px;
+    padding: 0 50px;
+    justify-content: space-between;
+    align-items:center;
+    background-color: rgb(39, 212, 243);
+    overflow: hidden;
+} */

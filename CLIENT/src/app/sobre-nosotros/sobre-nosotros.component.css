@@ -1,0 +1,190 @@
+/* Nuestro labor */
+.tituloLabor{
+    padding-top: 40px;
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: #A4ABBF;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+}
+#diseñoTitulo{
+    padding-top: 40px;
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #091126;
+    text-transform: uppercase;
+}
+.Labor{
+    display: flex;
+    align-items: center;
+    background-color: #091126;
+    flex-wrap: wrap;
+}
+.contenedor1Nosotros{
+    flex:1 1 20rem;
+    padding: 2rem;
+}
+#imagenPaciente{
+    width: 100%;
+}
+.contenedor2Nosotros{
+    flex: 1 1 20rem;
+    padding: 2rem;
+}
+#tituloParrafoLabor{
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+#parrafoLabor{
+    text-align: justify;
+    font-size: 0.9rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.5;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+/* Responsive */
+@media(max-width:764px){
+    .contenedor1Nosotros{
+        justify-content: start;
+        margin: 0 ;
+    }
+}
+@media(max-width:912px){
+    .contenedor2Nosotros{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .parrafoLabor{
+        text-align: center;
+    }
+    .contenedor1Nosotros{
+        justify-content: center;
+        align-items: center;
+        margin: 0 ;
+    }
+}
+@media(max-width:540px){
+    .contenedor1Nosotros{
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        
+    }
+    .parrafoLabor{
+        text-align: start;
+    }
+    .contenedor1Nosotros{
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media(max-width:820px){
+    .contenedor1Nosotros{
+        justify-content: start;
+        margin: 0 ;
+    }
+} */
+/* Equipo */
+.doctor{
+    display: inline-block;
+}
+.nuestrEquipo{
+    background: rgb(21,121,120);
+    background: linear-gradient(90deg, rgba(21,121,120,0.927608543417367) 16%, rgba(26,146,156,1) 50%, rgba(0,255,231,0.6166841736694677) 92%);
+    /* background-color:cadetblue; */
+    
+}
+.tituloEquipo{
+    padding-top: 70px;
+    padding-bottom: 30px;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 2px;
+    color:rgb(10, 10, 10);
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+}
+.tituloEquipo:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 50pxpx;
+    background:#189dbe;
+}
+/* #parrafoEquipo{
+    font-size: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    line-height: 25px;
+    color: white;
+    text-align: justify;
+} */
+.contenedorImagenesEquipo{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.doctores{
+    width:230px;
+    padding-top: 30px;
+    justify-content: center;
+    text-align: center;
+}
+#imagenDoctores{
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 20%;
+    /* border: 3px solid rgb(0, 119, 255); */
+}
+.Especialidad{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    color: black;
+    text-align:center;
+}
+.NombreDoctor{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.contenedorBotonNosotros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+}
+.contenedorBotonNosotros2{
+    text-decoration:none;
+    margin: 30px;
+    color: white;
+    font-weight:900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: transparent;
+    transition: all 0.6s;
+    padding: 10px 10px;
+    border: 1px solid white;
+    
+}
+#letrabotonNosotros{
+    text-align: center;
+    color:black;
+    font-weight:900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.contenedorBotonNosotros2:hover{
+    background-color: rgb(39, 212, 243);
+    box-shadow: 0 0 10px #189dbe, 0 0 40px #189dbe, 0 0 80px #189dbe;
+}

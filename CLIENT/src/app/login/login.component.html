@@ -1,0 +1,42 @@
+<!-- <div class="auth-container">
+    <div class="form-container">
+    <form (ngSubmit)="login()">
+      <h2>Iniciar Sesión</h2>
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="user" required>
+
+      <div *ngIf="userError" class="error-message">
+        Usuario incorrecto.
+      </div>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      <div *ngIf="passwordError" class="error-message">
+        Contraseña incorrecta.
+    </div>
+    <div *ngIf="error && !userError && !passwordError" class="error-message">
+        Usuario o contraseña incorrecto.
+    </div>
+
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+</div> -->
+<div class="auth-container">
+    <div class="form-container">
+      <form (ngSubmit)="login()">
+        <h2>Iniciar Sesión</h2>
+  
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="user" required>
+        <div *ngIf="userError" class="error-message">Usuario incorrecto.</div>
+  
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        <div *ngIf="passwordError" class="error-message">Contraseña incorrecta.</div>
+  
+        <div *ngIf="error && !userError && !passwordError" class="error-message">Usuario o contraseña incorrecto.</div>
+  
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,215 @@
+<div class="container mt-4">
+  <br><button class="btn btn-primary" (click)="ordernarNombre()">Ordenar por Nombre</button><br><br>
+</div>
+<br>
+<div class="container mt-4">
+  <label for="searchTerm">Buscar por título:</label>
+<input [(ngModel)]="searchTerm" type="text" id="searchTerm" class="form-control">
+<button class="btn btn-danger" type="button" (click)="searchByTerm()">Buscar</button>
+</div>
+<!-- <label class="container mt-4"for="searchTerm">Buscar por título:</label>
+<input [(ngModel)]="searchTerm" type="text" id="searchTerm" class="form-control">
+<button class="btn btn-danger" type="button" (click)="searchByTerm()">Buscar</button>
+<br> -->
+<div *ngIf=" isAdmin" class="container mt-4">
+  <h2>Actualizar Tratamiento</h2>
+  <form (ngSubmit)="updateTratamiento()">
+    <div class="form-group">
+      <label class="form-label" for="selectedTenis">Selecciona un Tratamiento</label>
+      <select id="selectedTenis" class="form-control" name="selectedTenis" [(ngModel)]="selectedTratamiento" (change)="loadTratamientoDetails()">
+        <option [ngValue]="null">Selecciona un Tratamiento</option>
+        <option *ngFor="let tratamiento of tratamientos" [value]="tratamiento.id">{{ tratamiento.title }}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="id" class="form-label">Id</label>
+      <input type="text" class="form-control" name="id" id="id" [(ngModel)]="newTratamientoUpdate.id">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="title" class="form-label">Titulo</label>
+        <input type="text" class="form-control" name="title" id="title" [(ngModel)]="newTratamientoUpdate.title">
+      </div>
+
+      <div class="form-group">
+        <label for="titulo2" class="form-label">Titulo 2</label>
+        <input type="text" class="form-control" name="titulo2" id="titulo2" [(ngModel)]="newTratamientoUpdate.title2">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="textTratamiento" class="form-label">Texto Tratamiento</label>
+      <input type="text" class="form-control" name="textTratamiento" id="textTratamiento" [(ngModel)]="newTratamientoUpdate.textTratamiento">
+    </div>
+    <div class="form-group">
+      <label for="image" class="form-label">Imagen URL</label>
+      <input type="text" class="form-control" name="image" id="image" [(ngModel)]="newTratamientoUpdate.image">
+    </div>
+
+    <button type="submit" class="btn btn-success">Actualizar</button>
+  </form>
+  <hr>
+</div>
+
+
+
+
+
+<div *ngIf=" isAdmin" class="container mt-4">
+  <h2> Crear Tratamiento</h2>
+  <form>
+    <!-- <button class="btn btn-primary" (click)="mostrarFormularioCrear()">Crear Nuevo Tratamiento</button> -->
+    <br><br>
+
+    <div class="form-group">
+      <label for="id">Id:</label>
+      <input id="id" [(ngModel)]="newTratamiento.id" name="id" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="titulo">Título:</label>
+      <input id="titulo" [(ngModel)]="newTratamiento.title" name="titulo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="titulo2">Título2:</label>
+      <input id="titulo2" [(ngModel)]="newTratamiento.title2" name="titulo2" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="textTratamiento">Descripción:</label>
+      <input id="textTratamiento" [(ngModel)]="newTratamiento.textTratamiento" name="textTratamiento" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="imagen">Imagen URL:</label>
+      <input id="imagen" [(ngModel)]="newTratamiento.image" name="imagen" class="form-control" />
+    </div>
+
+    <button class="btn btn-danger" type="button" (click)="newTratamiento ? createTratamiento() : updateTratamiento()">
+      {{ selectedTratamiento ? 'Actualizar' : 'Crear' }}
+    </button>
+  </form>
+</div>
+<br><br><br>
+<ul>
+  <div class="Tratamientos">
+    <li *ngFor="let tratamiento of tratamientos">
+      <app-tratamiento [tratamiento]="tratamiento">
+        <img src="{{ tratamiento.image }}" alt="{{ tratamiento.title }}" class="card-img-top" style="width: 200px; height: 200px; object-fit: cover;">
+      </app-tratamiento>
+      <br><br><br>
+      <button *ngIf=" isAdmin" class="btn btn-danger" type="button" (click)="deleteTratamiento(tratamiento)">
+        Borrar
+      </button>
+
+      <!-- <button *ngIf=" isAdmin" class="btn btn-primary" type="button" (click)="mostrarFormularioActualizar(tratamiento)">
+        Actualizar
+      </button> -->
+
+    </li>
+  </div>
+</ul>
+
+<!-- <br><button class="btn btn-primary" (click)="ordernarNombreDescente()">Ordenar por Nombre</button><br><br>
+ <br>
+ <label for="searchTerm">Buscar por título:</label>
+ <input [(ngModel)]="searchTerm" type="text" id="searchTerm">
+ <button class="btn btn-danger" type="button" (click)="searchByTerm()">Buscar</button>
+ <br>
+ 
+ <div *ngIf="newTratamiento || selectedTratamiento">
+   <h2>{{ selectedTratamiento ? 'Actualizar' : 'Crear' }} Tratamiento</h2>
+   <form>
+     <button class="btn btn-primary" (click)="mostrarFormularioCrear()">Crear Nuevo Tratamiento</button>
+     <br><br>
+ 
+     <table>
+       <tr>
+         <td><label for="id">Id:</label></td>
+         <td><input id="id" [(ngModel)]="newTratamiento.id" name="id" [disabled]="selectedTratamiento !== null"/></td>
+       </tr>
+       <tr>
+         <td><label for="titulo">Título:</label></td>
+         <td><input id="titulo" [(ngModel)]="newTratamiento.title" name="titulo" /></td>
+       </tr>
+       <tr>
+         <td><label for="titulo2">Título2:</label></td>
+         <td><input id="titulo2" [(ngModel)]="newTratamiento.title2" name="titulo2" /></td>
+       </tr>
+       <tr>
+         <td><label for="textTratamiento">Descripción:</label></td>
+         <td><input id="textTratamiento" [(ngModel)]="newTratamiento.textTratamiento" name="textTratamiento" /></td>
+       </tr>
+       <tr>
+         <td><label for="imagen">Imagen URL:</label></td>
+         <td><input id="imagen" [(ngModel)]="newTratamiento.image" name="imagen" /></td>
+       </tr>
+     </table>
+ 
+     <button class="btn btn-danger" type="button" (click)="newTratamiento ? createTratamiento() : updateTratamiento()">
+       {{ selectedTratamiento ? 'Actualizar' : 'Crear' }}
+     </button>
+ 
+     <button class="btn btn-primary" type="button" (click)="cancelarFormulario()">Cancelar</button>
+   </form>
+ </div>
+ <br><br><br>
+<ul>
+  <div class="Tratamientos">
+  <li *ngFor="let tratamiento of tratamientos">
+      <app-tratamiento [tratamiento]="tratamiento">  <img src="{{ tratamiento.image }}" alt="{{ tratamiento.title }}" class="card-img-top" style="width: 200px; height: 200px; object-fit: cover;"></app-tratamiento>
+      <br><br><br>
+      <button class="btn btn-danger" type="button" (click)="deleteTratamiento(tratamiento)">
+        Borrar
+      </button>
+      
+      <button class="btn btn-primary" type="button" (click)="mostrarFormularioActualizar(tratamiento)">
+        Actualizar
+      </button>
+      
+      </li>
+  </div>
+</ul> -->
+<!-- 
+<br><button (click)="ordernarNombreDescente()">Ordenar por Nombre</button><br><br>
+<br> 
+<label for="searchTerm">Buscar por titulo </label> 
+<input [(ngModel)]="searchTerm"type="text" id="searchTerm">
+<button type="button" (click)="searchByTerm()"> Buscar </button>
+<br>
+<div *ngIf="newTratamiento || selectedTratamiento">
+    <h2>{{ selectedTratamiento ? 'Actualizar' : 'Crear' }} Tratamiento</h2>
+    <form>
+        <button (click)="mostrarFormularioCrear()">
+            Da click para crear un  nuevo tratamiento
+        </button><br><br>
+
+        <label for="id">Id:</label>
+        <input id="id" [(ngModel)]="newTratamiento.id" name="id" [disabled]="selectedTratamiento !== null"/>
+
+      <label for="titulo">Título:</label>
+      <input id="titulo" [(ngModel)]="newTratamiento.title" name="titulo" />
+
+      <label for="titulo2">Título2:</label>
+      <input id="titulo2" [(ngModel)]="newTratamiento.title2" name="titulo2" />
+  
+      <label for="textTratamiento">textTratamiento</label>
+      <input id="textTratamiento" [(ngModel)]="newTratamiento.textTratamiento" name="imagen" />
+
+      <label for="imagen">Imagen URL:</label>
+      <input id="imagen" [(ngModel)]="newTratamiento.image" name="imagen" />
+      
+     
+  
+      <button type="button" (click)="newTratamiento ? createTratamiento() : updateTratamiento()">
+        {{ selectedTratamiento ? 'Actualizar' : 'Crear' }}
+      </button>
+  
+      <button type="button" (click)="cancelarFormulario()">Cancelar</button>
+    </form>
+  </div> -->
+
+<!-- <app-tratamiento></app-tratamiento>  -->
+
+

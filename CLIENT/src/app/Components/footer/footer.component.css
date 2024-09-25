@@ -1,0 +1,21 @@
+/* footer.component.css */
+.footer {
+  background-color: #030C29;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .left-section, .right-section {
+    flex: 1;
+    max-width: 45%;
+    margin-bottom: 20px;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    margin-right: 10px;
+  }
